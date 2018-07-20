@@ -1,0 +1,181 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-chid-my-suffix-heading" jhiTranslate="chidrenApp.chid.home.createOrEditLabel">Create or edit a Chid</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!chid.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="chid.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="chidrenApp.chid.fullName" for="field_fullName" [ngbTooltip]="'chidrenApp.chid.help.fullName' | translate">Full Name</label>
+                    <input type="text" class="form-control" name="fullName" id="field_fullName"
+                        [(ngModel)]="chid.fullName" required maxlength="100"/>
+                    <div [hidden]="!(editForm.controls.fullName?.dirty && editForm.controls.fullName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fullName?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fullName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="chidrenApp.chid.sex" for="field_sex" [ngbTooltip]="'chidrenApp.chid.help.sex' | translate">Sex</label>
+                    <select class="form-control" name="sex" [(ngModel)]="chid.sex" id="field_sex"  required>
+                        <option value="MALE">{{'chidrenApp.Sex.MALE' | translate}}</option>
+                        <option value="FEMALE">{{'chidrenApp.Sex.FEMALE' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.sex?.dirty && editForm.controls.sex?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sex?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="chidrenApp.chid.birthYear" for="field_birthYear" [ngbTooltip]="'chidrenApp.chid.help.birthYear' | translate">Birth Year</label>
+                    <input type="number" class="form-control" name="birthYear" id="field_birthYear"
+                        [(ngModel)]="chid.birthYear" required min="2000" jhiMin="2000" max="9999" jhiMax="9999"/>
+                    <div [hidden]="!(editForm.controls.birthYear?.dirty && editForm.controls.birthYear?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.birthYear?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.birthYear?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 2000 }">
+                            This field should be at least 2000.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.birthYear?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 9999 }">
+                            This field cannot be more than 9999.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.birthYear?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="chidrenApp.chid.entranceYear" for="field_entranceYear" [ngbTooltip]="'chidrenApp.chid.help.entranceYear' | translate">Entrance Year</label>
+                    <input type="number" class="form-control" name="entranceYear" id="field_entranceYear"
+                        [(ngModel)]="chid.entranceYear" min="2000" jhiMin="2000" max="9999" jhiMax="9999"/>
+                    <div [hidden]="!(editForm.controls.entranceYear?.dirty && editForm.controls.entranceYear?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.entranceYear?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 2000 }">
+                            This field should be at least 2000.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.entranceYear?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 9999 }">
+                            This field cannot be more than 9999.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.entranceYear?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="chidrenApp.chid.introduction" for="field_introduction" [ngbTooltip]="'chidrenApp.chid.help.introduction' | translate">Introduction</label>
+                    <input type="text" class="form-control" name="introduction" id="field_introduction"
+                        [(ngModel)]="chid.introduction" required maxlength="1000"/>
+                    <div [hidden]="!(editForm.controls.introduction?.dirty && editForm.controls.introduction?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.introduction?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.introduction?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1000 }">
+                        This field cannot be longer than 1000 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="chidrenApp.chid.photoLink" for="field_photoLink" [ngbTooltip]="'chidrenApp.chid.help.photoLink' | translate">Photo Link</label>
+                    <input type="text" class="form-control" name="photoLink" id="field_photoLink"
+                        [(ngModel)]="chid.photoLink" required maxlength="500"/>
+                    <div [hidden]="!(editForm.controls.photoLink?.dirty && editForm.controls.photoLink?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.photoLink?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.photoLink?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 500 }">
+                        This field cannot be longer than 500 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="chidrenApp.chid.etc" for="field_etc" [ngbTooltip]="'chidrenApp.chid.help.etc' | translate">Etc</label>
+                    <input type="text" class="form-control" name="etc" id="field_etc"
+                        [(ngModel)]="chid.etc" maxlength="1000"/>
+                    <div [hidden]="!(editForm.controls.etc?.dirty && editForm.controls.etc?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.etc?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1000 }">
+                        This field cannot be longer than 1000 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="chidrenApp.chid.supportedFund" for="field_supportedFund" [ngbTooltip]="'chidrenApp.chid.help.supportedFund' | translate">Supported Fund</label>
+                    <input type="number" class="form-control" name="supportedFund" id="field_supportedFund"
+                        [(ngModel)]="chid.supportedFund" min="0" jhiMin="0" max="9999999" jhiMax="9999999"/>
+                    <div [hidden]="!(editForm.controls.supportedFund?.dirty && editForm.controls.supportedFund?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.supportedFund?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.supportedFund?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 9999999 }">
+                            This field cannot be more than 9999999.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.supportedFund?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="chidrenApp.chid.currency" for="field_currency" [ngbTooltip]="'chidrenApp.chid.help.currency' | translate">Currency</label>
+                    <select class="form-control" name="currency" [(ngModel)]="chid.currency" id="field_currency"  required>
+                        <option value="USD">{{'chidrenApp.Currency.USD' | translate}}</option>
+                        <option value="KRW">{{'chidrenApp.Currency.KRW' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.currency?.dirty && editForm.controls.currency?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.currency?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="chidrenApp.chid.createdTime" for="field_createdTime" [ngbTooltip]="'chidrenApp.chid.help.createdTime' | translate">Created Time</label>
+                    <div class="d-flex">
+                        <input id="field_createdTime" type="datetime-local" class="form-control" name="createdTime" [(ngModel)]="createdTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="chidrenApp.chid.modifyTime" for="field_modifyTime" [ngbTooltip]="'chidrenApp.chid.help.modifyTime' | translate">Modify Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifyTime" type="datetime-local" class="form-control" name="modifyTime" [(ngModel)]="modifyTime"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

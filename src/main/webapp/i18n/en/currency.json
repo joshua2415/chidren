@@ -1,0 +1,9 @@
+{
+    "chidrenApp": {
+        "Currency" : {
+            "null": "",
+            "USD": "USD",
+            "KRW": "KRW"
+        }
+    }
+}

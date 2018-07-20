@@ -1,0 +1,45 @@
+
+{
+    "chidrenApp": {
+        "chid" : {
+            "home": {
+                "title": "Chids",
+                "createLabel": "Create a new Chid",
+                "createOrEditLabel": "Create or edit a Chid"
+            },
+            "created": "A new Chid is created with identifier {{ param }}",
+            "updated": "A Chid is updated with identifier {{ param }}",
+            "deleted": "A Chid is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Chid {{ id }}?"
+            },
+            "detail": {
+                "title": "Chid"
+            },
+            "fullName": "Full Name",
+            "sex": "Sex",
+            "birthYear": "Birth Year",
+            "entranceYear": "Entrance Year",
+            "introduction": "Introduction",
+            "photoLink": "Photo Link",
+            "etc": "Etc",
+            "supportedFund": "Supported Fund",
+            "currency": "Currency",
+            "createdTime": "Created Time",
+            "modifyTime": "Modify Time",
+            "help": {
+                "fullName": "The fullName.",
+                "sex": "The sex.",
+                "birthYear": "The birthYear.",
+                "entranceYear": "The entranceYear.",
+                "introduction": "The introduction.",
+                "photoLink": "The photoLink.",
+                "etc": "The etc.",
+                "supportedFund": "The supportedFund.",
+                "currency": "The currency.",
+                "createdTime": "The modifyTime.",
+                "modifyTime": "The modifyTime."
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Chid.
+    -->
+    <changeSet id="20180719030150-1" author="jhipster">
+        <createTable tableName="chid" remarks="The Chid entity.">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="full_name" type="varchar(100)" remarks="The fullName.">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="sex" type="varchar(255)" remarks="The sex.">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="birth_year" type="integer" remarks="The birthYear.">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="entrance_year" type="integer" remarks="The entranceYear.">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="introduction" type="varchar(1000)" remarks="The introduction.">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="photo_link" type="varchar(500)" remarks="The photoLink.">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="etc" type="varchar(1000)" remarks="The etc.">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="supported_fund" type="integer" remarks="The supportedFund.">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="currency" type="varchar(255)" remarks="The currency.">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="created_time" type="datetime" remarks="The modifyTime.">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="modify_time" type="datetime" remarks="The modifyTime.">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="chid" columnName="created_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="chid" columnName="modify_time" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

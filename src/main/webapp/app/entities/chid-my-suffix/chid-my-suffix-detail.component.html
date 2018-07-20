@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="chid">
+            <h2><span jhiTranslate="chidrenApp.chid.detail.title">Chid</span> {{chid.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="chidrenApp.chid.fullName" [ngbTooltip]="'chidrenApp.chid.help.fullName' | translate">Full Name</span></dt>
+                <dd>
+                    <span>{{chid.fullName}}</span>
+                </dd>
+                <dt><span jhiTranslate="chidrenApp.chid.sex" [ngbTooltip]="'chidrenApp.chid.help.sex' | translate">Sex</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'chidrenApp.Sex.' + chid.sex}}">{{chid.sex}}</span>
+                </dd>
+                <dt><span jhiTranslate="chidrenApp.chid.birthYear" [ngbTooltip]="'chidrenApp.chid.help.birthYear' | translate">Birth Year</span></dt>
+                <dd>
+                    <span>{{chid.birthYear}}</span>
+                </dd>
+                <dt><span jhiTranslate="chidrenApp.chid.entranceYear" [ngbTooltip]="'chidrenApp.chid.help.entranceYear' | translate">Entrance Year</span></dt>
+                <dd>
+                    <span>{{chid.entranceYear}}</span>
+                </dd>
+                <dt><span jhiTranslate="chidrenApp.chid.introduction" [ngbTooltip]="'chidrenApp.chid.help.introduction' | translate">Introduction</span></dt>
+                <dd>
+                    <span>{{chid.introduction}}</span>
+                </dd>
+                <dt><span jhiTranslate="chidrenApp.chid.photoLink" [ngbTooltip]="'chidrenApp.chid.help.photoLink' | translate">Photo Link</span></dt>
+                <dd>
+                    <span>{{chid.photoLink}}</span>
+                </dd>
+                <dt><span jhiTranslate="chidrenApp.chid.etc" [ngbTooltip]="'chidrenApp.chid.help.etc' | translate">Etc</span></dt>
+                <dd>
+                    <span>{{chid.etc}}</span>
+                </dd>
+                <dt><span jhiTranslate="chidrenApp.chid.supportedFund" [ngbTooltip]="'chidrenApp.chid.help.supportedFund' | translate">Supported Fund</span></dt>
+                <dd>
+                    <span>{{chid.supportedFund}}</span>
+                </dd>
+                <dt><span jhiTranslate="chidrenApp.chid.currency" [ngbTooltip]="'chidrenApp.chid.help.currency' | translate">Currency</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'chidrenApp.Currency.' + chid.currency}}">{{chid.currency}}</span>
+                </dd>
+                <dt><span jhiTranslate="chidrenApp.chid.createdTime" [ngbTooltip]="'chidrenApp.chid.help.createdTime' | translate">Created Time</span></dt>
+                <dd>
+                    <span>{{chid.createdTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="chidrenApp.chid.modifyTime" [ngbTooltip]="'chidrenApp.chid.help.modifyTime' | translate">Modify Time</span></dt>
+                <dd>
+                    <span>{{chid.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/chid-my-suffix', chid.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+{
+    "name": "Chid",
+    "fields": [
+        {
+            "fieldName": "fullName",
+            "javadoc": "The fullName.",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "sex",
+            "javadoc": "The sex.",
+            "fieldType": "Sex",
+            "fieldValues": "MALE,FEMALE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "birthYear",
+            "javadoc": "The birthYear.",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 2000,
+            "fieldValidateRulesMax": 9999
+        },
+        {
+            "fieldName": "entranceYear",
+            "javadoc": "The entranceYear.",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 2000,
+            "fieldValidateRulesMax": 9999
+        },
+        {
+            "fieldName": "introduction",
+            "javadoc": "The introduction.",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "photoLink",
+            "javadoc": "The photoLink.",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 500
+        },
+        {
+            "fieldName": "etc",
+            "javadoc": "The etc.",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "supportedFund",
+            "javadoc": "The supportedFund.",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 9999999
+        },
+        {
+            "fieldName": "currency",
+            "javadoc": "The currency.",
+            "fieldType": "Currency",
+            "fieldValues": "USD,KRW",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "createdTime",
+            "javadoc": "The modifyTime.",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifyTime",
+            "javadoc": "The modifyTime.",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180719030150",
+    "javadoc": "The Chid entity.",
+    "entityTableName": "chid",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
