@@ -24,6 +24,7 @@ task webpackBuildDev(type: YarnTask) {
 //war {
 //    webAppDirName = 'src/main/webapp/'
 //}
+
 war {
     webAppDirName = 'build/www/'
 }

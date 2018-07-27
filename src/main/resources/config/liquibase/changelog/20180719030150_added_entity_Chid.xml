@@ -68,6 +68,13 @@
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/CHID_201807262059.csv"
+                  separator=";"
+                  tableName="chid">
+            <column name="created_time" type="timestamp"/>
+            <column name="modify_time" type="timestamp"/>
+        </loadData>        
         <dropDefaultValue tableName="chid" columnName="created_time" columnDataType="datetime"/>
         <dropDefaultValue tableName="chid" columnName="modify_time" columnDataType="datetime"/>
         
